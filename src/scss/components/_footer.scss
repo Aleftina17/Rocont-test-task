@@ -1,0 +1,29 @@
+.footer{
+    margin: 32px auto;
+
+	> .container{
+        display: flex;
+        gap: 140px;
+    }
+
+    > a{
+        white-space: nowrap;
+        line-height: 150%;
+    }
+
+    &__nav{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px 40px;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__logo{
+        margin-left: auto;
+    }
+}

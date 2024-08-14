@@ -1,0 +1,180 @@
+body {
+	font-family: 'TildaSans-VF', sans-serif;
+	font-size: 16px;
+	line-height: 150%;
+	background-image: url('./../assets/images/pages/main/bg-lines.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+section:first-of-type{
+	margin-top: 84px;
+}
+
+.mobile {
+	display: none;
+}
+
+@media (max-width: 640px) {
+.desktop{
+	display: none;
+}
+
+.mobile{
+	display: flex;
+}
+}
+
+.container {
+	width: 1160px;
+	margin: 0 auto;
+}
+
+// @media (min-width: 1920px) {
+// 	html {
+// 		font-size: 10px;
+// 	}
+// }
+
+// @media (max-width: 48em) {
+// 	html {
+// 		font-size: 5px;
+// 		font-size: 1.5625vw;
+// 		font-size: calc((100 / 375) * 5vw);
+// 		-webkit-text-size-adjust: none;
+// 	}
+
+// 	body {
+// 		-webkit-text-size-adjust: none;
+// 	}
+
+// 	section {
+// 		margin-bottom: 20rem;
+// 	}
+
+// 	.container {
+// 		padding: 0 4rem;
+// 		width: 100%;
+// 	}
+// }
+
+.logo {
+	display: block;
+	width: 93px;
+	height: 36px;
+	
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+section + section{
+	margin-top: 96px;
+}
+
+// Headings
+.h1 {
+	font-family: 'Gropled-Bold', sans-serif;
+	font-size: 64px;
+	line-height: 90%;
+}
+
+.h2 {
+	font-family: 'Gropled-Bold', sans-serif;
+	font-size: 40px;
+	line-height: 95%;
+}
+
+.h3 {
+	font-family: 'Gropled-Bold', sans-serif;
+	font-size: 32px;
+	line-height: 100%;
+}
+
+.h3 {
+	font-family: 'Gropled-Bold', sans-serif;
+	font-size: 24px;
+	line-height: 110%;
+}
+
+.lead {
+	font-family: 'TildaSans-VF', sans-serif;
+	font-weight: 500;
+	line-height: 140%;
+	font-size: 21px;
+	letter-spacing: -0.63px;
+}
+
+.note {
+	font-family: 'TildaSans-VF', sans-serif;
+	font-weight: 400;
+	line-height: 100%;
+	font-size: 12px;
+}
+
+// Buttons
+.btn {
+	font-family: 'Gropled-Bold', sans-serif;
+	font-size: 18px;
+	line-height: 110%;
+	border-radius: 40px;
+	padding: 16px 24px;
+	background-color: $color-accent;
+	color: $color-bg;
+	transition: opacity 0.2s;
+	width: fit-content;
+
+	&:hover,
+	&:focus,
+	&:active {
+		opacity: 0.8;
+	}
+
+	&--header {
+		font-family: 'TildaSans-VF', sans-serif;
+		font-size: 16px;
+		padding: 8px 16px;
+	}
+
+	&--order{
+		display: flex;
+		gap: 16px;
+		padding: 16px 16px 16px 24px;
+
+		svg{
+			width: 48px;
+			height: 20px;
+		}
+	}
+}
+
+// Links
+a {
+	transition: color 0.2s;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-accent;
+	}
+}
+
+// Swiper
+.swiper-button {
+	&-next, &-prev{
+		width: 48px;
+		height: 20px;
+		position: static;
+		margin-top: unset;
+	
+		&::after{
+			content: none;
+		}
+	}
+}
+
+
+.swiper-wrapper{
+	width: fit-content;
+}
