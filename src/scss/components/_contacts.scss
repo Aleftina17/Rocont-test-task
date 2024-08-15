@@ -1,5 +1,5 @@
 .contacts {
-	> .container {
+	&__content {
 		display: flex;
 		gap: 8px;
 	}

@@ -1,7 +1,7 @@
 .footer{
     margin: 32px auto;
 
-	> .container{
+    &__content{
         display: flex;
         gap: 140px;
     }

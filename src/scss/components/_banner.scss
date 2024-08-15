@@ -1,47 +1,67 @@
-.banner{
-    > .container{
-        border-radius: 24px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .video{
-        display: block;
-        position: absolute;
-        top: -64px;
-        width: 1160px;
-        z-index: -1;
-        left: 0;
-        right: 0;
-    }
-
+.banner {
     &__content{
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-        width: 685px;
-        padding: 64px 0 64px 64px;
-        color: $color-bg;
-
-        > .lead{
-            width: 426px;
-        }
+        border-radius: 24px;
+		overflow: hidden;
+		position: relative;
     }
 
-    &__certif{
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        color: $color-bg;
-        width: fit-content;
-        position: absolute;
-        bottom: 64px;
-        right: 64px;
+	.video {
+		display: block;
+		position: absolute;
+		top: -64px;
+		width: 100%;
+		z-index: -1;
+		left: 0;
+		right: 0;
+	}
 
-        span{
-            &:first-of-type{
-                text-align: right;
-            }
-        }
-    }
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		width: 685px;
+		padding: 64px 0 64px 64px;
+		color: $color-bg;
+
+		@media (max-width: 960px) {
+			padding: 48px 0 48px 48px;
+			width: 426px;
+		}
+
+		.h1 {
+			@media (max-width: 960px) {
+				text-wrap: balance;
+			}
+		}
+
+		> .lead {
+			width: 426px;
+
+			@media (max-width: 960px) {
+				width: 100%;
+			}
+		}
+	}
+
+	&__certif {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		color: $color-bg;
+		width: fit-content;
+		position: absolute;
+		bottom: 64px;
+		right: 64px;
+
+		@media (max-width: 960px) {
+			bottom: 48px;
+			right: 48px;
+		}
+
+		span {
+			&:first-of-type {
+				text-align: right;
+			}
+		}
+	}
 }
