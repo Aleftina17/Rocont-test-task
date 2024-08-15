@@ -27,4 +27,21 @@
             width: 426px;
         }
     }
+
+    &__certif{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        color: $color-bg;
+        width: fit-content;
+        position: absolute;
+        bottom: 64px;
+        right: 64px;
+
+        span{
+            &:first-of-type{
+                text-align: right;
+            }
+        }
+    }
 }

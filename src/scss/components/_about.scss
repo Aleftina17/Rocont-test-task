@@ -22,9 +22,10 @@
 	}
 
 	.swiper-about {
-		margin-left: 244px;
+		margin-left: 365px;
 		overflow: visible;
-		clip-path: inset(-100vw -100vw -100vw 0);
+		clip-path: inset(-100vw -100vw -100vw 244px);
+		transform: translateX(-371px);
 
 		.swiper-slide {
 			border-radius: 24px;
@@ -46,31 +47,31 @@
 				transition: opacity 0.6s;
 			}
 
-            &__text{
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                z-index: 3;
-                position: absolute;
-                bottom: 32px;
-                left: 32px;
-                right: 32px;
-                color: $color-bg;
-                text-wrap: pretty;
-                opacity: 0;
-                transform: translateY(60%);
-                transition: opacity .6s, transform .6s;
-            }
+			&__text {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				z-index: 3;
+				position: absolute;
+				bottom: 32px;
+				left: 32px;
+				right: 32px;
+				color: $color-bg;
+				text-wrap: pretty;
+				opacity: 0;
+				transform: translateY(60%);
+				transition: opacity 0.6s, transform 0.6s;
+			}
 
 			&-active {
 				&::after {
 					opacity: 1;
 				}
 
-                .swiper-slide__text{
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+				.swiper-slide__text {
+					opacity: 1;
+					transform: translateY(0);
+				}
 			}
 		}
 	}

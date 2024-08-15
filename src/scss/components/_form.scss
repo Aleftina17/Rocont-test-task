@@ -1,0 +1,85 @@
+.form-section {
+	> .container {
+		background-color: $color-accent;
+		border-radius: 24px;
+		padding: 64px;
+		color: $color-bg;
+		background-image: url('./../../assets/images/components/form/form-deco.png');
+		background-position: bottom right;
+		background-repeat: no-repeat;
+		background-size: 363px 366px;
+		display: flex;
+		gap: 64px;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		width: 50%;
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			width: 423px;
+
+			li {
+				display: flex;
+				gap: 8px;
+
+				svg {
+					width: 24px;
+					height: 24px;
+					flex-shrink: 0;
+					transform: translateY(2.5px);
+				}
+			}
+		}
+	}
+
+	.form {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+		&__inputs {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			margin-bottom: 8px;
+		}
+
+		&__input {
+			padding: 8px 24px;
+			background-color: $color-bg;
+			border-radius: 40px;
+			color: $color-font;
+			width: 100%;
+
+			input {
+				width: 100%;
+			}
+		}
+
+		&__checkbox {
+			display: flex;
+			gap: 8px;
+			align-items: center;
+
+			a {
+				text-decoration: underline;
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: inherit;
+				}
+			}
+		}
+
+		.btn--submit {
+			margin-top: auto;
+		}
+	}
+}
