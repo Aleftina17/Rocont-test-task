@@ -10,19 +10,59 @@
 		background-size: 363px 366px;
 		display: flex;
 		gap: 64px;
+
+		@media (max-width: 1040px) {
+			padding: 48px;
+			gap: 48px;
+			background-size: 279px 307px;
+		}
+
+		@media (max-width: 800px) {
+			flex-direction: column;
+			gap: 24px;
+			padding: 24px;
+			background-position: 100% 150%;
+		}
+
+		@media (max-width: 480px) {
+			background-image: none;
+		}
 	}
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
-		width: 50%;
+		width: 518px;
+
+		@media (max-width: 1040px) {
+			gap: 24px;
+			width: 363px;
+		}
+
+		@media (max-width: 800px) {
+			width: 100%;
+		}
+
+		.h2 {
+			@media screen and (max-width: 1040px) {
+				text-wrap: balance;
+			}
+		}
 
 		&-list {
 			display: flex;
 			flex-direction: column;
 			gap: 16px;
 			width: 423px;
+
+			@media (max-width: 1040px) {
+				width: 345px;
+			}
+
+			@media (max-width: 800px) {
+				width: 100%;
+			}
 
 			li {
 				display: flex;
@@ -32,7 +72,6 @@
 					width: 24px;
 					height: 24px;
 					flex-shrink: 0;
-					transform: translateY(2.5px);
 				}
 			}
 		}
@@ -48,6 +87,15 @@
 			flex-direction: column;
 			gap: 8px;
 			margin-bottom: 8px;
+
+			@media screen and (max-width: 800px) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media (max-width: 480px) {
+				grid-template-columns: repeat(1, 1fr);
+			}
 		}
 
 		&__input {
@@ -56,6 +104,16 @@
 			border-radius: 40px;
 			color: $color-font;
 			width: 100%;
+
+			@media screen and (max-width: 800px) {
+				&:last-of-type {
+					grid-area: auto / span 2;
+
+					@media (max-width: 380px) {
+						grid-area: auto;
+					}
+				}
+			}
 
 			input {
 				width: 100%;
@@ -66,6 +124,10 @@
 			display: flex;
 			gap: 8px;
 			align-items: center;
+
+			@media (max-width: 380px) {
+				max-width: 176px;
+			}
 
 			a {
 				text-decoration: underline;
@@ -80,6 +142,10 @@
 
 		.btn--submit {
 			margin-top: auto;
+
+			@media screen and (max-width: 1040px) {
+				margin-top: 24px;
+			}
 		}
 	}
 }

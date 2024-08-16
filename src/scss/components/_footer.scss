@@ -1,29 +1,81 @@
-.footer{
-    margin: 32px auto;
+.footer {
+	margin: 32px auto;
 
-    &__content{
-        display: flex;
-        gap: 140px;
-    }
+	&__content {
+		display: flex;
+		gap: 140px;
 
-    > a{
-        white-space: nowrap;
-        line-height: 150%;
-    }
+		@media screen and (max-width: 960px) {
+			gap: 70px;
+		}
 
-    &__nav{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px 40px;
-    }
+		@media screen and (max-width: 800px) {
+			gap: 32px;
+			flex-direction: column;
+		}
+	}
 
-    &__info{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+	a {
+		line-height: 150%;
 
-    &__logo{
-        margin-left: auto;
-    }
+		@media screen and (max-width: 800px) {
+			line-height: 110%;
+			font-weight: 500;
+		}
+	}
+
+	&__nav {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px 40px;
+
+		@media screen and (max-width: 960px) {
+			gap: 16px 20px;
+		}
+
+		@media screen and (max-width: 800px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 32px;
+			order: 1;
+		}
+
+		@media screen and (max-width: 380px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		@media screen and (max-width: 960px) {
+			margin-left: auto;
+		}
+
+		@media screen and (max-width: 800px) {
+			margin-left: unset;
+			gap: 32px;
+			order: 2;
+			position: relative;
+
+			&::before {
+				content: '';
+				width: 100%;
+				height: 2px;
+				background-color: $color-font;
+				top: 0;
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	&__logo {
+		margin-left: auto;
+
+		@media screen and (max-width: 800px) {
+			margin-left: unset;
+		}
+	}
 }

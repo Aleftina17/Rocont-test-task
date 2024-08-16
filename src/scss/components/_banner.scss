@@ -1,9 +1,28 @@
 .banner {
-    &__content{
-        border-radius: 24px;
+	&__content {
+		border-radius: 24px;
 		overflow: hidden;
 		position: relative;
-    }
+		padding: 64px;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		color: $color-bg;
+
+		@media (max-width: 960px) {
+			padding: 48px;
+		}
+
+		@media (max-width: 640px) {
+			padding: 24px;
+			gap: 24px;
+		}
+
+		@media (max-width: 480px) {
+			padding: unset;
+			border-radius: unset;
+		}
+	}
 
 	.video {
 		display: block;
@@ -13,25 +32,78 @@
 		z-index: -1;
 		left: 0;
 		right: 0;
+		object-fit: cover;
+
+		@media (max-width: 1200px) {
+			top: 0;
+			bottom: 0;
+			height: 100%;
+		}
+
+		@media (max-width: 480px) {
+			position: static;
+			height: 197px;
+			overflow: hidden;
+			border-radius: 24px;
+		}
+	}
+
+	&__title {
+		width: 685px;
+
+		@media (max-width: 960px) {
+			text-wrap: pretty;
+			width: 365px;
+		}
+
+		@media (max-width: 640px) {
+			width: 236px;
+			text-wrap: balance;
+		}
+
+		@media (max-width: 480px) {
+			position: absolute;
+			top: 40px;
+			left: 40px;
+		}
+
+		@media (max-width: 380px) {
+			position: static;
+			color: $color-font;
+		}
 	}
 
 	&__text {
 		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: 640px) {
+			gap: 67px;
+		}
+
+		@media (max-width: 480px) {
+			color: $color-font;
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+
+	&__info {
+		display: flex;
 		flex-direction: column;
 		gap: 32px;
-		width: 685px;
-		padding: 64px 0 64px 64px;
-		color: $color-bg;
 
 		@media (max-width: 960px) {
-			padding: 48px 0 48px 48px;
 			width: 426px;
 		}
 
-		.h1 {
-			@media (max-width: 960px) {
-				text-wrap: balance;
-			}
+		@media (max-width: 640px) {
+			width: 337px;
+		}
+
+		@media (max-width: 480px) {
+			width: 100%;
+			gap: 24px;
 		}
 
 		> .lead {
@@ -47,20 +119,28 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
-		color: $color-bg;
-		width: fit-content;
-		position: absolute;
-		bottom: 64px;
-		right: 64px;
+		align-self: flex-end;
 
-		@media (max-width: 960px) {
-			bottom: 48px;
-			right: 48px;
+		@media (max-width: 640px) {
+			gap: 0;
 		}
 
+		@media (max-width: 480px) {
+			opacity: 0.5;
+			flex-direction: row;
+			gap: 2px;
+			align-self: flex-start;
+		}
+
+		
+
 		span {
-			&:first-of-type {
-				text-align: right;
+			text-align: right;
+			text-wrap: balance;
+
+			@media (max-width: 640px) {
+				line-height: 100%;
+				font-size: 12px;
 			}
 		}
 	}

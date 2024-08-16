@@ -1,52 +1,64 @@
 .about {
 	overflow: clip;
 
-	> .container{
+	> .container {
 		padding-right: 0;
 	}
 
 	&__content {
-		position: relative;
-		overflow: visible;
+		display: flex;
+		gap: 69px;
+
+		@media (max-width: 960px) {
+			gap: 118px;
+		}
+
+		@media (max-width: 760px) {
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 236px;
+
+		@media screen and (max-width: 960px) {
+			width: 232px;
+		}
 	}
 
 	.h2 {
-		width: 175px;
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		@media (max-width: 960px) {
-			width: 122px;
-		}
+		width: fit-content;
+		text-wrap: balance;
 	}
 
 	.swiper-controls {
-		position: absolute;
-		left: 0;
-		top: 430px;
-		display: flex;
 		align-items: center;
 		gap: 16px;
-
-		@media (max-width: 960px) {
-			top: 330px;
-		}
 	}
 
 	.swiper-about {
-		margin-left: 365px;
 		overflow: visible;
-		clip-path: inset(-100vw -100vw -100vw 244px);
-		transform: translateX(-371px);
+		clip-path: inset(-100vw -100vw -100vw 0);
 
-		// @media (max-width: 960px) {
-		//     margin-left: 240px;
-		// }
+		@media (max-width: 760px) {
+			clip-path: none;
+		}
 
-		@media (max-width: 960px) {
-			clip-path: inset(-100vw -100vw -100vw 161px);
-			transform: translateX(-288px);
+		.swiper-wrapper {
+			margin-left: -414px;
+
+			@media screen and (max-width: 960px) {
+				margin-left: -346px;
+			}
+
+			@media (max-width: 760px) {
+				margin-left: 0;
+				width: calc(100vw - 20px);
+			}
 		}
 
 		.swiper-slide {
@@ -56,9 +68,13 @@
 			overflow: hidden;
 			position: relative;
 
-			@media (max-width: 960px) {
+			@media screen and (max-width: 960px) {
 				height: 350px;
 				width: 250px;
+			}
+
+			@media (max-width: 480px) {
+				height: 280px;
 			}
 
 			&::after {
@@ -88,9 +104,27 @@
 				opacity: 0;
 				transform: translateY(60%);
 				transition: opacity 0.6s, transform 0.6s;
+				text-wrap: wrap;
+
+				@media (max-width: 640px) {
+					bottom: 24px;
+					left: 24px;
+					right: 24px;
+				}
 			}
 
 			&-active {
+				&::after {
+					opacity: 1;
+				}
+
+				.swiper-slide__text {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@media (max-width: 760px) {
 				&::after {
 					opacity: 1;
 				}
